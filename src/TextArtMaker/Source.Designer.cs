@@ -35,13 +35,14 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrayScalePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // OpenButton
             // 
-            this.OpenButton.Location = new System.Drawing.Point(532, 25);
+            this.OpenButton.Location = new System.Drawing.Point(526, 25);
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(126, 31);
             this.OpenButton.TabIndex = 0;
@@ -82,7 +83,7 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(532, 65);
+            this.ClearButton.Location = new System.Drawing.Point(526, 65);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(126, 31);
             this.ClearButton.TabIndex = 5;
@@ -110,17 +111,28 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Grayscale：";
             // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(12, 281);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(496, 398);
+            this.textBox1.TabIndex = 0;
+            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 604);
+            this.ClientSize = new System.Drawing.Size(666, 691);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.OpenButton);
+            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.PathBox);
             this.Controls.Add(this.GrayScalePictureBox);
-            this.Controls.Add(this.OpenButton);
             this.Controls.Add(this.OriginPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -143,6 +155,7 @@
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
