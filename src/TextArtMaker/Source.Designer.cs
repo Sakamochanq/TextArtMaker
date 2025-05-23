@@ -35,7 +35,7 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PreviewTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrayScalePictureBox)).BeginInit();
             this.SuspendLayout();
@@ -111,22 +111,22 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Grayscale：";
             // 
-            // textBox1
+            // PreviewTextBox
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(12, 281);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(496, 398);
-            this.textBox1.TabIndex = 0;
+            this.PreviewTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PreviewTextBox.Location = new System.Drawing.Point(12, 281);
+            this.PreviewTextBox.Multiline = true;
+            this.PreviewTextBox.Name = "PreviewTextBox";
+            this.PreviewTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.PreviewTextBox.Size = new System.Drawing.Size(496, 398);
+            this.PreviewTextBox.TabIndex = 0;
             // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 691);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PreviewTextBox);
             this.Controls.Add(this.OpenButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.label2);
@@ -155,7 +155,7 @@
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PreviewTextBox;
     }
 }
 
