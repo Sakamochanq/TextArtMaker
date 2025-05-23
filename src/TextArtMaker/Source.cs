@@ -20,10 +20,12 @@ namespace TextArtMaker
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     PathBox.Text = ofd.FileName;
+                    Application.DoEvents();
 
                     // 画像を明示的に読み込む
                     Image loadedImage = Image.FromFile(ofd.FileName);
                     OriginPictureBox.Image = loadedImage;
+
 
                     ImageEdit = new ImageEdit();
                     GrayScalePictureBox.Image = ImageEdit.GrayScale(loadedImage);
