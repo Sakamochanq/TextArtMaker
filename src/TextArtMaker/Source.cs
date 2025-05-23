@@ -1,20 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TextArtMaker
 {
     public partial class Source : Form
     {
+        private ImageEdit ImageEdit;
+
         public Source()
         {
             InitializeComponent();
+        }
+
+        private void OpenButton_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Windows画像形式（*.png; *.jpeg; *.bmp）|*.png; *.jpeg; *.jpg; *.bmp;" })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    PathBox.Text = ofd.FileName;
+
+                    // 画像を明示的に読み込む
+                    Image loadedImage = Image.FromFile(ofd.FileName);
+                    OriginPictureBox.Image = loadedImage;
+
+                    ImageEdit = new ImageEdit();
+                    GrayScalePictureBox.Image = ImageEdit.GrayScale(loadedImage);
+                }
+            }
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            PathBox.Text = string.Empty;
+            OriginPictureBox.Image = null;
+            GrayScalePictureBox.Image = null;
         }
     }
 }

@@ -47,6 +47,7 @@
             this.OpenButton.TabIndex = 0;
             this.OpenButton.Text = "Load Image";
             this.OpenButton.UseVisualStyleBackColor = true;
+            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // PathBox
             // 
@@ -87,6 +88,7 @@
             this.ClearButton.TabIndex = 5;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // label1
             // 
