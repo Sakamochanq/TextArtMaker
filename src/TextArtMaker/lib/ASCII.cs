@@ -12,7 +12,7 @@ namespace TextArtMaker.lib
         // 輝度に応じたASCII文字（陰影のグラデーション）
         private static readonly string asciiChars = "@%#*+=-:. ";
 
-        public static string Convert(Image image)
+        public void Convert(Image image)
         {
             int width = image.Width;
             int height = image.Height;
@@ -35,7 +35,6 @@ namespace TextArtMaker.lib
 
                 string ASCII_ART = sb.ToString();
                 Notepad(ASCII_ART);
-                return ASCII_ART;
             }
         }
 
