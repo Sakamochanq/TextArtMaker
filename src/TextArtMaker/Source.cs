@@ -48,7 +48,6 @@ namespace TextArtMaker
             {
                 ASCII = new ASCII();
                 string ASCII_ART = ASCII.Convert(GrayScalePictureBox.Image);
-                PreviewTextBox.Text = ASCII_ART;
             }
             catch (Exception ex)
             {
