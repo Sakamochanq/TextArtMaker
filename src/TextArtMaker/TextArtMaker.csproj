@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="lib\ASCII.cs" />
     <Compile Include="lib\ImageEdit.cs" />
     <Compile Include="Source.cs">
       <SubType>Form</SubType>

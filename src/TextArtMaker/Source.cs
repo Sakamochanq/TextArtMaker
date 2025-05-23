@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using TextArtMaker.lib;
 
 namespace TextArtMaker
 {
     public partial class Source : Form
     {
         private ImageEdit ImageEdit;
+        private ASCII ASCII;
 
         public Source()
         {
@@ -38,6 +40,20 @@ namespace TextArtMaker
             PathBox.Text = string.Empty;
             OriginPictureBox.Image = null;
             GrayScalePictureBox.Image = null;
+        }
+
+        private void ConvertButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ASCII = new ASCII();
+                string ASCII_ART = ASCII.Convert(GrayScalePictureBox.Image);
+                PreviewTextBox.Text = ASCII_ART;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Text Art Maker", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
