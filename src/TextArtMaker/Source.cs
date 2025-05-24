@@ -54,5 +54,10 @@ namespace TextArtMaker
                 MessageBox.Show(ex.Message, "Text Art Maker", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void ScaleTrackBar_Scroll(object sender, EventArgs e)
+        {
+            ScaleLabel.Text = $"Scale: {ScaleTrackBar.Value.ToString()}";
+        }
     }
 }

@@ -36,8 +36,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ConvertButton = new System.Windows.Forms.Button();
+            this.ScaleTrackBar = new System.Windows.Forms.TrackBar();
+            this.ScaleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrayScalePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // OpenButton
@@ -121,11 +124,32 @@
             this.ConvertButton.UseVisualStyleBackColor = true;
             this.ConvertButton.Click += new System.EventHandler(this.ConvertButton_Click);
             // 
+            // ScaleTrackBar
+            // 
+            this.ScaleTrackBar.Location = new System.Drawing.Point(61, 322);
+            this.ScaleTrackBar.Maximum = 100;
+            this.ScaleTrackBar.Name = "ScaleTrackBar";
+            this.ScaleTrackBar.Size = new System.Drawing.Size(238, 45);
+            this.ScaleTrackBar.TabIndex = 9;
+            this.ScaleTrackBar.TickFrequency = 10;
+            this.ScaleTrackBar.Scroll += new System.EventHandler(this.ScaleTrackBar_Scroll);
+            // 
+            // ScaleLabel
+            // 
+            this.ScaleLabel.AutoSize = true;
+            this.ScaleLabel.Location = new System.Drawing.Point(305, 337);
+            this.ScaleLabel.Name = "ScaleLabel";
+            this.ScaleLabel.Size = new System.Drawing.Size(45, 12);
+            this.ScaleLabel.TabIndex = 10;
+            this.ScaleLabel.Text = "Scale: 0";
+            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 258);
+            this.ClientSize = new System.Drawing.Size(666, 445);
+            this.Controls.Add(this.ScaleLabel);
+            this.Controls.Add(this.ScaleTrackBar);
             this.Controls.Add(this.ConvertButton);
             this.Controls.Add(this.OpenButton);
             this.Controls.Add(this.ClearButton);
@@ -141,6 +165,7 @@
             this.Text = "Text Art Maker   |   Sakamochanq";
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrayScalePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,6 +181,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ConvertButton;
+        private System.Windows.Forms.TrackBar ScaleTrackBar;
+        private System.Windows.Forms.Label ScaleLabel;
     }
 }
 
