@@ -40,6 +40,7 @@ namespace TextArtMaker
             PathBox.Text = string.Empty;
             OriginPictureBox.Image = null;
             GrayScalePictureBox.Image = null;
+            ScaleTrackBar.Value = 20;
         }
 
         private void ConvertButton_Click(object sender, EventArgs e)

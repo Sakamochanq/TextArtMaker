@@ -37,10 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ConvertButton = new System.Windows.Forms.Button();
             this.ScaleTrackBar = new System.Windows.Forms.TrackBar();
-            this.ScaleLabel = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ScaleLabel = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrayScalePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // OpenButton
@@ -62,7 +64,6 @@
             this.PathBox.ReadOnly = true;
             this.PathBox.Size = new System.Drawing.Size(502, 19);
             this.PathBox.TabIndex = 1;
-            this.PathBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // OriginPictureBox
             // 
@@ -126,29 +127,38 @@
             // 
             // ScaleTrackBar
             // 
-            this.ScaleTrackBar.Location = new System.Drawing.Point(61, 322);
+            this.ScaleTrackBar.Location = new System.Drawing.Point(12, 262);
             this.ScaleTrackBar.Maximum = 100;
             this.ScaleTrackBar.Name = "ScaleTrackBar";
-            this.ScaleTrackBar.Size = new System.Drawing.Size(238, 45);
+            this.ScaleTrackBar.Size = new System.Drawing.Size(243, 45);
             this.ScaleTrackBar.TabIndex = 9;
             this.ScaleTrackBar.TickFrequency = 10;
+            this.ScaleTrackBar.Value = 20;
             this.ScaleTrackBar.Scroll += new System.EventHandler(this.ScaleTrackBar_Scroll);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ScaleLabel});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 311);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(666, 25);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // ScaleLabel
             // 
-            this.ScaleLabel.AutoSize = true;
-            this.ScaleLabel.Location = new System.Drawing.Point(305, 337);
             this.ScaleLabel.Name = "ScaleLabel";
-            this.ScaleLabel.Size = new System.Drawing.Size(45, 12);
-            this.ScaleLabel.TabIndex = 10;
-            this.ScaleLabel.Text = "Scale: 0";
+            this.ScaleLabel.Size = new System.Drawing.Size(52, 22);
+            this.ScaleLabel.Text = "Scale: 20";
             // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 445);
-            this.Controls.Add(this.ScaleLabel);
+            this.ClientSize = new System.Drawing.Size(666, 336);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ScaleTrackBar);
             this.Controls.Add(this.ConvertButton);
             this.Controls.Add(this.OpenButton);
@@ -166,6 +176,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrayScalePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,7 +194,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ConvertButton;
         private System.Windows.Forms.TrackBar ScaleTrackBar;
-        private System.Windows.Forms.Label ScaleLabel;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel ScaleLabel;
     }
 }
 
