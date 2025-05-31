@@ -47,7 +47,7 @@ namespace TextArtMaker
             try
             {
                 ASCII = new ASCII();
-                string ASCII_ART = ASCII.Convert(GrayScalePictureBox.Image);
+                string ASCII_ART = ASCII.Convert(GrayScalePictureBox.Image, ScaleTrackBar.Value);
             }
             catch (Exception ex)
             {

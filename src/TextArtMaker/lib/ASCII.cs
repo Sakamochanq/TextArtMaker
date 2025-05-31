@@ -12,18 +12,26 @@ namespace TextArtMaker.lib
         // 輝度に応じたASCII文字（陰影のグラデーション）
         private static readonly string asciiChars = "@%#*+=-:. ";
 
-        public string Convert(Image image)
+        public string Convert(Image image, int scalePercent)
         {
-            int width = image.Width;
-            int height = image.Height;
+            if (scalePercent < 1 || scalePercent > 100)
+                throw new ArgumentOutOfRangeException(nameof(scalePercent), "Scale must be between 1 and 100");
+
+            int width = image.Width * scalePercent / 100;
+            int height = image.Height * scalePercent / 100;
+
+            // 文字の縦横比に補正（文字は縦に長いので補正をかける）
+            double charAspect = 0.5;
+
+            height = (int)(height * charAspect);
 
             using (Bitmap bitmap = new Bitmap(image, new Size(width, height)))
             {
                 StringBuilder sb = new StringBuilder();
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < bitmap.Height; y++)
                 {
-                    for (int x = 0; x < width; x++)
+                    for (int x = 0; x < bitmap.Width; x++)
                     {
                         Color pixel = bitmap.GetPixel(x, y);
                         int gray = (pixel.R + pixel.G + pixel.B) / 3;
@@ -38,6 +46,7 @@ namespace TextArtMaker.lib
                 return ASCII_ART;
             }
         }
+
 
         private static void Notepad(string text)
         {
