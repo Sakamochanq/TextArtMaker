@@ -41,10 +41,18 @@ namespace TextArtMaker
             OriginPictureBox.Image = null;
             GrayScalePictureBox.Image = null;
             ScaleTrackBar.Value = 20;
+            ScaleLabel.Text = "Scale: 20";
+
         }
 
         private void ConvertButton_Click(object sender, EventArgs e)
         {
+            if(GrayScalePictureBox.Image == null)
+            {
+                MessageBox.Show("画像を読み込んでください。", "Text Art Maker", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 ASCII = new ASCII();
