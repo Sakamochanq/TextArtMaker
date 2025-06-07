@@ -21,5 +21,21 @@ namespace TextArtMaker
             }
             return bmp;
         }
+
+        public Bitmap Reverse(Image image)
+        {
+            Bitmap bmp = new Bitmap(image);
+
+            for (int y = 0; y < bmp.Height; y++)
+            {
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    Color pixelColor = bmp.GetPixel(x, y);
+                    Color reversedColor = Color.FromArgb(255 - pixelColor.R, 255 - pixelColor.G, 255 - pixelColor.B);
+                    bmp.SetPixel(x, y, reversedColor);
+                }
+            }
+            return bmp;
+        }
     }
 }

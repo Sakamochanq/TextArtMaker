@@ -52,15 +52,20 @@ namespace TextArtMaker.lib
         {
             try
             {
+                // 子フォルダであるarchiveフォルダを指定
                 string archiveDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archive");
+
+                // archiveフォルダがない場合は作成
                 if (!Directory.Exists(archiveDir))
                 {
                     Directory.CreateDirectory(archiveDir);
                 }
 
+                // 乱数（GUID）を割り当て、UTF8でエンコードして保存
                 string filePath = Path.Combine(archiveDir, $"ascii_{Guid.NewGuid()}.txt");
                 File.WriteAllText(filePath, text, Encoding.UTF8);
 
+                // 標準のメモ帳アプリで、保存したテキストファイルを開く
                 Process.Start("notepad.exe", filePath);
             }
             catch (Exception ex)
