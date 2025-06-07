@@ -13,6 +13,10 @@ namespace TextArtMaker
         public Source()
         {
             InitializeComponent();
+
+            StyleSelectBox.Items.Add("GrayScale");
+            StyleSelectBox.Items.Add("Reverse");
+            StyleSelectBox.SelectedIndex = 0;
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
@@ -34,7 +38,18 @@ namespace TextArtMaker
 
 
                     ImageEdit = new ImageEdit();
-                    GrayScalePictureBox.Image = ImageEdit.GrayScale(loadedImage);
+
+                    switch (StyleSelectBox.SelectedIndex)
+                    {
+                        case 0:
+                            ResultPictureBox.Image = ImageEdit.GrayScale(loadedImage);
+                            break;
+                        case 1:
+                            ResultPictureBox.Image = ImageEdit.Reverse(loadedImage);
+                            break;
+                        default:
+                            return;
+                    }
 
                     StatusLabel.Text = "Converted Successfully";
                     Application.DoEvents();
@@ -46,7 +61,7 @@ namespace TextArtMaker
         {
             PathBox.Text = string.Empty;
             OriginPictureBox.Image = null;
-            GrayScalePictureBox.Image = null;
+            ResultPictureBox.Image = null;
             ScaleTrackBar.Value = 20;
             ScaleLabel.Text = "Scale: 20";
 
@@ -54,7 +69,7 @@ namespace TextArtMaker
 
         private void ConvertButton_Click(object sender, EventArgs e)
         {
-            if(GrayScalePictureBox.Image == null)
+            if(ResultPictureBox.Image == null)
             {
                 MessageBox.Show("画像を読み込んでください。", "Text Art Maker", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -63,7 +78,7 @@ namespace TextArtMaker
             try
             {
                 ASCII = new ASCII();
-                string ASCII_ART = ASCII.Convert(GrayScalePictureBox.Image, ScaleTrackBar.Value);
+                string ASCII_ART = ASCII.Convert(ResultPictureBox.Image, ScaleTrackBar.Value);
             }
             catch (Exception ex)
             {

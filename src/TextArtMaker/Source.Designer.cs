@@ -31,7 +31,7 @@
             this.OpenButton = new System.Windows.Forms.Button();
             this.PathBox = new System.Windows.Forms.TextBox();
             this.OriginPictureBox = new System.Windows.Forms.PictureBox();
-            this.GrayScalePictureBox = new System.Windows.Forms.PictureBox();
+            this.ResultPictureBox = new System.Windows.Forms.PictureBox();
             this.ClearButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,8 +40,10 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripLabel();
             this.ScaleLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.StyleSelectBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GrayScalePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,15 +78,15 @@
             this.OriginPictureBox.TabIndex = 3;
             this.OriginPictureBox.TabStop = false;
             // 
-            // GrayScalePictureBox
+            // ResultPictureBox
             // 
-            this.GrayScalePictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.GrayScalePictureBox.Location = new System.Drawing.Point(271, 65);
-            this.GrayScalePictureBox.Name = "GrayScalePictureBox";
-            this.GrayScalePictureBox.Size = new System.Drawing.Size(243, 156);
-            this.GrayScalePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GrayScalePictureBox.TabIndex = 4;
-            this.GrayScalePictureBox.TabStop = false;
+            this.ResultPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ResultPictureBox.Location = new System.Drawing.Point(271, 65);
+            this.ResultPictureBox.Name = "ResultPictureBox";
+            this.ResultPictureBox.Size = new System.Drawing.Size(243, 156);
+            this.ResultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ResultPictureBox.TabIndex = 4;
+            this.ResultPictureBox.TabStop = false;
             // 
             // ClearButton
             // 
@@ -163,11 +165,32 @@
             this.ScaleLabel.TabIndex = 11;
             this.ScaleLabel.Text = "Scale: 20";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(523, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Style Options：";
+            // 
+            // StyleSelectBox
+            // 
+            this.StyleSelectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StyleSelectBox.FormattingEnabled = true;
+            this.StyleSelectBox.Location = new System.Drawing.Point(526, 176);
+            this.StyleSelectBox.Name = "StyleSelectBox";
+            this.StyleSelectBox.Size = new System.Drawing.Size(126, 20);
+            this.StyleSelectBox.TabIndex = 13;
+            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 336);
+            this.Controls.Add(this.StyleSelectBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.ScaleLabel);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ScaleTrackBar);
@@ -177,7 +200,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PathBox);
-            this.Controls.Add(this.GrayScalePictureBox);
+            this.Controls.Add(this.ResultPictureBox);
             this.Controls.Add(this.OriginPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -185,7 +208,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Text Art Maker   |   Sakamochanq";
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GrayScalePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -199,7 +222,7 @@
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.TextBox PathBox;
         private System.Windows.Forms.PictureBox OriginPictureBox;
-        private System.Windows.Forms.PictureBox GrayScalePictureBox;
+        private System.Windows.Forms.PictureBox ResultPictureBox;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -208,6 +231,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel StatusLabel;
         private System.Windows.Forms.Label ScaleLabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox StyleSelectBox;
     }
 }
 
