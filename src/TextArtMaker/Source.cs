@@ -28,9 +28,16 @@ namespace TextArtMaker
                     Image loadedImage = Image.FromFile(ofd.FileName);
                     OriginPictureBox.Image = loadedImage;
 
+                    // 進捗状況のラベル
+                    StatusLabel.Text = "Converting Image ...";
+                    Application.DoEvents();
+
 
                     ImageEdit = new ImageEdit();
                     GrayScalePictureBox.Image = ImageEdit.GrayScale(loadedImage);
+
+                    StatusLabel.Text = "Converted Successfully";
+                    Application.DoEvents();
                 }
             }
         }

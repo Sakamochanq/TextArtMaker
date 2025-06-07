@@ -38,7 +38,8 @@
             this.ConvertButton = new System.Windows.Forms.Button();
             this.ScaleTrackBar = new System.Windows.Forms.TrackBar();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.ScaleLabel = new System.Windows.Forms.ToolStripLabel();
+            this.StatusLabel = new System.Windows.Forms.ToolStripLabel();
+            this.ScaleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrayScalePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
@@ -111,9 +112,9 @@
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(268, 233);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Grayscale：";
+            this.label2.Text = "Result：";
             // 
             // ConvertButton
             // 
@@ -140,17 +141,26 @@
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ScaleLabel});
+            this.StatusLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 311);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(666, 25);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // StatusLabel
+            // 
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(60, 22);
+            this.StatusLabel.Text = "Waiting ...";
+            // 
             // ScaleLabel
             // 
+            this.ScaleLabel.AutoSize = true;
+            this.ScaleLabel.Location = new System.Drawing.Point(269, 283);
             this.ScaleLabel.Name = "ScaleLabel";
-            this.ScaleLabel.Size = new System.Drawing.Size(52, 22);
+            this.ScaleLabel.Size = new System.Drawing.Size(51, 12);
+            this.ScaleLabel.TabIndex = 11;
             this.ScaleLabel.Text = "Scale: 20";
             // 
             // Source
@@ -158,6 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 336);
+            this.Controls.Add(this.ScaleLabel);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ScaleTrackBar);
             this.Controls.Add(this.ConvertButton);
@@ -195,7 +206,8 @@
         private System.Windows.Forms.Button ConvertButton;
         private System.Windows.Forms.TrackBar ScaleTrackBar;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel ScaleLabel;
+        private System.Windows.Forms.ToolStripLabel StatusLabel;
+        private System.Windows.Forms.Label ScaleLabel;
     }
 }
 
