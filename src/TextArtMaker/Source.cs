@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using TextArtMaker.lib;
 
@@ -25,17 +26,17 @@ namespace TextArtMaker
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    PathBox.Text = ofd.FileName;
-                    Application.DoEvents();
+                    string full_file_path = ofd.FileName;
+                    string fileName = Path.GetFileName(full_file_path);
+                    stripImageLabel.Text = $"Image：{fileName}";
 
                     // 画像を明示的に読み込む
                     Image loadedImage = Image.FromFile(ofd.FileName);
                     OriginPictureBox.Image = loadedImage;
 
-                    // 進捗状況のラベル
-                    StatusLabel.Text = "Converting Image ...";
-                    Application.DoEvents();
 
+
+                    Application.DoEvents();
 
                     ImageEdit = new ImageEdit();
 
@@ -50,8 +51,6 @@ namespace TextArtMaker
                         default:
                             return;
                     }
-
-                    StatusLabel.Text = "Converted Successfully";
                     Application.DoEvents();
                 }
             }
@@ -59,11 +58,12 @@ namespace TextArtMaker
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            PathBox.Text = string.Empty;
             OriginPictureBox.Image = null;
             ResultPictureBox.Image = null;
             ScaleTrackBar.Value = 20;
-            ScaleLabel.Text = "Scale: 20";
+            ScaleLabel.Text = $"ASCI I の全体サイズ： {20} %";
+            stripScaleLabel.Text = $"Scale：{20} %";
+            stripImageLabel.Text = "Image：null";
 
         }
 
@@ -71,7 +71,6 @@ namespace TextArtMaker
         {
             if(ResultPictureBox.Image == null)
             {
-                MessageBox.Show("画像を読み込んでください。", "Text Art Maker", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -88,7 +87,13 @@ namespace TextArtMaker
 
         private void ScaleTrackBar_Scroll(object sender, EventArgs e)
         {
-            ScaleLabel.Text = $"Scale: {ScaleTrackBar.Value.ToString()}";
+            ScaleLabel.Text = $"ASCI I の全体サイズ： {ScaleTrackBar.Value.ToString()} %";
+            stripScaleLabel.Text = $"Scale：{ScaleTrackBar.Value.ToString()} %";
+        }
+
+        private void StyleSelectBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            stripStyleLabel.Text = $"Scale：{StyleSelectBox.SelectedItem.ToString()}";
         }
     }
 }
