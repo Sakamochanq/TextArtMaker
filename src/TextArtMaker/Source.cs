@@ -29,6 +29,15 @@ namespace TextArtMaker
             StyleSelectBox.SelectedIndex = 0;
         }
 
+        // 画像のラベルとスケールの値を更新するメソッド
+        private void Sender(string label_text, int scale_value)
+        {
+            ScaleTrackBar.Value = scale_value;
+            ScaleLabel.Text = $"ASCI I の全体サイズ： {scale_value} %";
+            stripScaleLabel.Text = $"Scale：{scale_value} %";
+            stripImageLabel.Text = label_text;
+        }
+
         private void OpenButton_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Windows画像形式（*.png; *.jpeg; *.bmp）|*.png; *.jpeg; *.jpg; *.bmp;" })
@@ -81,9 +90,9 @@ namespace TextArtMaker
         {
             OriginPictureBox.Image = null;
             ResultPictureBox.Image = null;
-            ScaleTrackBar.Value = 20;
-            ScaleLabel.Text = $"ASCI I の全体サイズ： {20} %";
-            stripScaleLabel.Text = $"Scale：{20} %";
+
+            Sender("20", 20);
+
             stripImageLabel.Text = "Image：null";
 
         }
@@ -122,19 +131,19 @@ namespace TextArtMaker
             switch (ScaleSelectBox.SelectedIndex)
             {
                 case 0:
-                    ScaleTrackBar.Value = 20;
+                    Sender("20", 20);
                     break;
                 case 1:
-                    ScaleTrackBar.Value = 40;
+                    Sender("40", 40);
                     break;
                 case 2:
-                    ScaleTrackBar.Value = 60;
+                    Sender("60", 60);
                     break;
                 case 3:
-                    ScaleTrackBar.Value = 80;
+                    Sender("80", 80);
                     break;
                 case 4:
-                    ScaleTrackBar.Value = 100;
+                    Sender("100", 100);
                     break;
                 default:
                     return;
