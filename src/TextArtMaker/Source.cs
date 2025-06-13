@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 using TextArtMaker.lib;
 
 namespace TextArtMaker
@@ -53,6 +54,18 @@ namespace TextArtMaker
                     }
                     Application.DoEvents();
                 }
+            }
+        }
+
+        private void OpenArchiveButton_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists("archive"))
+            {
+                return;
+            }
+            else
+            {
+                Process.Start("explorer.exe", Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archive"));
             }
         }
 

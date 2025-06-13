@@ -56,8 +56,10 @@
             this.stripScaleLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.stripStyleLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.stripStyleLabel = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.OpenArchiveButton = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
@@ -168,6 +170,8 @@
             // 
             this.ファイルFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenButton,
+            this.OpenArchiveButton,
+            this.toolStripSeparator3,
             this.名前を付けて保存ToolStripMenuItem,
             this.toolStripMenuItem1,
             this.終了ToolStripMenuItem});
@@ -179,7 +183,7 @@
             // 
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenButton.Size = new System.Drawing.Size(180, 22);
+            this.OpenButton.Size = new System.Drawing.Size(181, 22);
             this.OpenButton.Text = "開く";
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
@@ -188,7 +192,7 @@
             this.名前を付けて保存ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.名前を付けて保存ToolStripMenuItem1});
             this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
-            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.名前を付けて保存ToolStripMenuItem.Text = "保存";
             // 
             // 名前を付けて保存ToolStripMenuItem1
@@ -202,13 +206,13 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
             this.終了ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.終了ToolStripMenuItem.Text = "終了";
             // 
             // 編集EToolStripMenuItem
@@ -318,17 +322,30 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(10, 22);
+            this.toolStripLabel2.Text = " ";
+            // 
             // stripStyleLabel
             // 
             this.stripStyleLabel.Name = "stripStyleLabel";
             this.stripStyleLabel.Size = new System.Drawing.Size(98, 22);
             this.stripStyleLabel.Text = " Style：GrayScale";
             // 
-            // toolStripLabel2
+            // toolStripSeparator3
             // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(10, 22);
-            this.toolStripLabel2.Text = " ";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(178, 6);
+            // 
+            // OpenArchiveButton
+            // 
+            this.OpenArchiveButton.Name = "OpenArchiveButton";
+            this.OpenArchiveButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
+            this.OpenArchiveButton.Size = new System.Drawing.Size(180, 22);
+            this.OpenArchiveButton.Text = "archiveを開く";
+            this.OpenArchiveButton.Click += new System.EventHandler(this.OpenArchiveButton_Click);
             // 
             // Source
             // 
@@ -394,6 +411,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripLabel stripStyleLabel;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripMenuItem OpenArchiveButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 
