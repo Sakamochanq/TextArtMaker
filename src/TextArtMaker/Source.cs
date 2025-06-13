@@ -103,6 +103,7 @@ namespace TextArtMaker
         {
             OriginPictureBox.Image = null;
             ResultPictureBox.Image = null;
+            ASCII_ART = null;
 
             Sender("20", 20);
 
