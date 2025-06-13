@@ -63,6 +63,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.stripStyleLabel = new System.Windows.Forms.ToolStripLabel();
+            this.WaitingLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
@@ -373,11 +374,24 @@
             this.stripStyleLabel.Size = new System.Drawing.Size(98, 22);
             this.stripStyleLabel.Text = " Style：GrayScale";
             // 
+            // WaitingLabel
+            // 
+            this.WaitingLabel.AutoSize = true;
+            this.WaitingLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.WaitingLabel.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.WaitingLabel.Location = new System.Drawing.Point(557, 109);
+            this.WaitingLabel.Name = "WaitingLabel";
+            this.WaitingLabel.Size = new System.Drawing.Size(66, 17);
+            this.WaitingLabel.TabIndex = 17;
+            this.WaitingLabel.Text = "変換中 ...";
+            this.WaitingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 330);
+            this.Controls.Add(this.WaitingLabel);
             this.Controls.Add(this.toolstrip);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menustrip);
@@ -442,6 +456,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem aSCIIのサイズのプリセットToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox ScaleSelectBox;
+        private System.Windows.Forms.Label WaitingLabel;
     }
 }
 

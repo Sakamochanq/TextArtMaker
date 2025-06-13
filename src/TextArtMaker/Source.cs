@@ -18,6 +18,8 @@ namespace TextArtMaker
         {
             InitializeComponent();
 
+            WaitingLabel.Visible = false;
+
             ScaleSelectBox.Items.Add("1x");
             ScaleSelectBox.Items.Add("2x");
             ScaleSelectBox.Items.Add("3x");
@@ -55,7 +57,7 @@ namespace TextArtMaker
                     OriginPictureBox.Image = loadedImage;
 
 
-
+                    WaitingLabel.Visible = true;
                     Application.DoEvents();
 
                     ImageEdit = new ImageEdit();
@@ -77,6 +79,8 @@ namespace TextArtMaker
                         default:
                             return;
                     }
+
+                    WaitingLabel.Visible = false;
                     Application.DoEvents();
                 }
             }
@@ -135,7 +139,11 @@ namespace TextArtMaker
 
             if (loadedImage != null)
             {
+                //既存の画像をクリア
+                ResultPictureBox.Image = null;
+                WaitingLabel.Visible = true;
                 Application.DoEvents();
+
                 switch (StyleSelectBox.SelectedIndex)
                 {
                     case 0:
@@ -153,6 +161,9 @@ namespace TextArtMaker
                     default:
                         return;
                 }
+
+                WaitingLabel.Visible = false;
+                Application.DoEvents();
             }
         }
 
