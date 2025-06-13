@@ -11,6 +11,7 @@ namespace TextArtMaker
     public partial class Source : Form
     {
         private ImageEdit ImageEdit;
+        private Image loadedImage;
         private ASCII ASCII;
 
         public Source()
@@ -51,7 +52,7 @@ namespace TextArtMaker
                     stripImageLabel.Text = $"Image：{fileName}";
 
                     // 画像を明示的に読み込む
-                    Image loadedImage = Image.FromFile(ofd.FileName);
+                    loadedImage = Image.FromFile(ofd.FileName);
                     OriginPictureBox.Image = loadedImage;
 
 
@@ -133,6 +134,27 @@ namespace TextArtMaker
         {
             stripStyleLabel.Text = $"Style：{StyleSelectBox.SelectedItem.ToString()}";
 
+            if (loadedImage != null)
+            {
+                Application.DoEvents();
+                switch (StyleSelectBox.SelectedIndex)
+                {
+                    case 0:
+                        ResultPictureBox.Image = ImageEdit.GrayScale(loadedImage);
+                        break;
+                    case 1:
+                        ResultPictureBox.Image = ImageEdit.Reverse(loadedImage);
+                        break;
+                    case 2:
+                        ResultPictureBox.Image = ImageEdit.SepiaTone(loadedImage);
+                        break;
+                    case 3:
+                        ResultPictureBox.Image = ImageEdit.HistogramEqualization(loadedImage);
+                        break;
+                    default:
+                        return;
+                }
+            }
         }
 
         private void ScaleSelectBox_SelectedIndexChanged(object sender, EventArgs e)
