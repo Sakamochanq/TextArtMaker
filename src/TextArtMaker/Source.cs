@@ -131,7 +131,8 @@ namespace TextArtMaker
 
         private void StyleSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stripStyleLabel.Text = $"Scale：{StyleSelectBox.SelectedItem.ToString()}";
+            stripStyleLabel.Text = $"Style：{StyleSelectBox.SelectedItem.ToString()}";
+
         }
 
         private void ScaleSelectBox_SelectedIndexChanged(object sender, EventArgs e)
