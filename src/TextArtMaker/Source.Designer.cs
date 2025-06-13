@@ -64,6 +64,8 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.stripStyleLabel = new System.Windows.Forms.ToolStripLabel();
             this.WaitingLabel = new System.Windows.Forms.Label();
+            this.拡張機能XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportPythonButton = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
@@ -163,7 +165,8 @@
             this.menustrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menustrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルFToolStripMenuItem,
-            this.編集EToolStripMenuItem});
+            this.編集EToolStripMenuItem,
+            this.拡張機能XToolStripMenuItem});
             this.menustrip.Location = new System.Drawing.Point(0, 0);
             this.menustrip.Name = "menustrip";
             this.menustrip.Size = new System.Drawing.Size(733, 24);
@@ -187,7 +190,7 @@
             // 
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenButton.Size = new System.Drawing.Size(179, 22);
+            this.OpenButton.Size = new System.Drawing.Size(180, 22);
             this.OpenButton.Text = "開く";
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
@@ -195,21 +198,21 @@
             // 
             this.OpenArchiveButton.Name = "OpenArchiveButton";
             this.OpenArchiveButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
-            this.OpenArchiveButton.Size = new System.Drawing.Size(179, 22);
+            this.OpenArchiveButton.Size = new System.Drawing.Size(180, 22);
             this.OpenArchiveButton.Text = "archiveを開く";
             this.OpenArchiveButton.Click += new System.EventHandler(this.OpenArchiveButton_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // 名前を付けて保存ToolStripMenuItem
             // 
             this.名前を付けて保存ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.名前を付けて保存ToolStripMenuItem1});
             this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
-            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.名前を付けて保存ToolStripMenuItem.Text = "保存";
             // 
             // 名前を付けて保存ToolStripMenuItem1
@@ -223,13 +226,13 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
             this.終了ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.終了ToolStripMenuItem.Text = "終了";
             // 
             // 編集EToolStripMenuItem
@@ -386,6 +389,21 @@
             this.WaitingLabel.Text = "変換中 ...";
             this.WaitingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // 拡張機能XToolStripMenuItem
+            // 
+            this.拡張機能XToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ExportPythonButton});
+            this.拡張機能XToolStripMenuItem.Name = "拡張機能XToolStripMenuItem";
+            this.拡張機能XToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.拡張機能XToolStripMenuItem.Text = "拡張機能（X）";
+            // 
+            // ExportPythonButton
+            // 
+            this.ExportPythonButton.Name = "ExportPythonButton";
+            this.ExportPythonButton.Size = new System.Drawing.Size(180, 22);
+            this.ExportPythonButton.Text = "PythonScriptの出力";
+            this.ExportPythonButton.Click += new System.EventHandler(this.ExportPythonButton_Click);
+            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -457,6 +475,8 @@
         private System.Windows.Forms.ToolStripMenuItem aSCIIのサイズのプリセットToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox ScaleSelectBox;
         private System.Windows.Forms.Label WaitingLabel;
+        private System.Windows.Forms.ToolStripMenuItem 拡張機能XToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExportPythonButton;
     }
 }
 

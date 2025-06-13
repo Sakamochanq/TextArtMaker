@@ -12,6 +12,7 @@ namespace TextArtMaker
     {
         private ImageEdit ImageEdit;
         private Image loadedImage;
+        private string ASCII_ART;
         private ASCII ASCII;
 
         public Source()
@@ -119,7 +120,7 @@ namespace TextArtMaker
             try
             {
                 ASCII = new ASCII();
-                string ASCII_ART = ASCII.Convert(ResultPictureBox.Image, ScaleTrackBar.Value);
+                ASCII_ART = ASCII.Convert(ResultPictureBox.Image, ScaleTrackBar.Value);
             }
             catch (Exception ex)
             {
@@ -189,6 +190,17 @@ namespace TextArtMaker
                 default:
                     return;
             }
+        }
+
+        private void ExportPythonButton_Click(object sender, EventArgs e)
+        {
+            //変数ASCII_ARTがnullの場合
+            if (string.IsNullOrEmpty(ASCII_ART))
+            {
+                return;
+            }
+            ExportPython exportPython = new ExportPython();
+            exportPython.ToConsole(ASCII_ART);
         }
     }
 }
