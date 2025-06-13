@@ -47,6 +47,9 @@
             this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編集EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClearButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aSCIIのサイズのプリセットToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ScaleSelectBox = new System.Windows.Forms.ToolStripComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ScaleLabel = new System.Windows.Forms.Label();
             this.toolstrip = new System.Windows.Forms.ToolStrip();
@@ -60,9 +63,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.stripStyleLabel = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.aSCIIのサイズのプリセットToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ScaleSelectBox = new System.Windows.Forms.ToolStripComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
@@ -245,9 +245,30 @@
             // 
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Delete)));
-            this.ClearButton.Size = new System.Drawing.Size(198, 22);
+            this.ClearButton.Size = new System.Drawing.Size(188, 22);
             this.ClearButton.Text = "画像の削除";
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 6);
+            // 
+            // aSCIIのサイズのプリセットToolStripMenuItem
+            // 
+            this.aSCIIのサイズのプリセットToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ScaleSelectBox});
+            this.aSCIIのサイズのプリセットToolStripMenuItem.Name = "aSCIIのサイズのプリセットToolStripMenuItem";
+            this.aSCIIのサイズのプリセットToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.aSCIIのサイズのプリセットToolStripMenuItem.Text = "全体サイズのプリセット";
+            // 
+            // ScaleSelectBox
+            // 
+            this.ScaleSelectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ScaleSelectBox.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.ScaleSelectBox.Name = "ScaleSelectBox";
+            this.ScaleSelectBox.Size = new System.Drawing.Size(121, 23);
+            this.ScaleSelectBox.SelectedIndexChanged += new System.EventHandler(this.ScaleSelectBox_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -351,27 +372,6 @@
             this.stripStyleLabel.Name = "stripStyleLabel";
             this.stripStyleLabel.Size = new System.Drawing.Size(98, 22);
             this.stripStyleLabel.Text = " Style：GrayScale";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(195, 6);
-            // 
-            // aSCIIのサイズのプリセットToolStripMenuItem
-            // 
-            this.aSCIIのサイズのプリセットToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ScaleSelectBox});
-            this.aSCIIのサイズのプリセットToolStripMenuItem.Name = "aSCIIのサイズのプリセットToolStripMenuItem";
-            this.aSCIIのサイズのプリセットToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.aSCIIのサイズのプリセットToolStripMenuItem.Text = "ASCI I_Size プリセット";
-            // 
-            // ScaleSelectBox
-            // 
-            this.ScaleSelectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ScaleSelectBox.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.ScaleSelectBox.Name = "ScaleSelectBox";
-            this.ScaleSelectBox.Size = new System.Drawing.Size(121, 23);
-            this.ScaleSelectBox.SelectedIndexChanged += new System.EventHandler(this.ScaleSelectBox_SelectedIndexChanged);
             // 
             // Source
             // 

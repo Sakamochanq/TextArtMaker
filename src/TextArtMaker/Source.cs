@@ -38,7 +38,6 @@ namespace TextArtMaker
             ScaleTrackBar.Value = scale_value;
             ScaleLabel.Text = $"ASCI I の全体サイズ： {scale_value} %";
             stripScaleLabel.Text = $"Scale：{scale_value} %";
-            stripImageLabel.Text = label_text;
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
