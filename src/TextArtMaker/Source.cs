@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 using TextArtMaker.lib;
+using System.Runtime.Remoting.Channels;
 
 namespace TextArtMaker
 {
@@ -14,9 +17,25 @@ namespace TextArtMaker
         {
             InitializeComponent();
 
+            ScaleSelectBox.Items.Add("1x");
+            ScaleSelectBox.Items.Add("2x");
+            ScaleSelectBox.Items.Add("3x");
+            ScaleSelectBox.Items.Add("4x");
+            ScaleSelectBox.Items.Add("5x");
+            ScaleSelectBox.SelectedIndex = 0;
+
             StyleSelectBox.Items.Add("GrayScale");
             StyleSelectBox.Items.Add("Reverse");
             StyleSelectBox.SelectedIndex = 0;
+        }
+
+        // 画像のラベルとスケールの値を更新するメソッド
+        private void Sender(string label_text, int scale_value)
+        {
+            ScaleTrackBar.Value = scale_value;
+            ScaleLabel.Text = $"ASCI I の全体サイズ： {scale_value} %";
+            stripScaleLabel.Text = $"Scale：{scale_value} %";
+            stripImageLabel.Text = label_text;
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
@@ -25,17 +44,17 @@ namespace TextArtMaker
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    PathBox.Text = ofd.FileName;
-                    Application.DoEvents();
+                    string full_file_path = ofd.FileName;
+                    string fileName = Path.GetFileName(full_file_path);
+                    stripImageLabel.Text = $"Image：{fileName}";
 
                     // 画像を明示的に読み込む
                     Image loadedImage = Image.FromFile(ofd.FileName);
                     OriginPictureBox.Image = loadedImage;
 
-                    // 進捗状況のラベル
-                    StatusLabel.Text = "Converting Image ...";
-                    Application.DoEvents();
 
+
+                    Application.DoEvents();
 
                     ImageEdit = new ImageEdit();
 
@@ -50,20 +69,31 @@ namespace TextArtMaker
                         default:
                             return;
                     }
-
-                    StatusLabel.Text = "Converted Successfully";
                     Application.DoEvents();
                 }
             }
         }
 
+        private void OpenArchiveButton_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists("archive"))
+            {
+                return;
+            }
+            else
+            {
+                Process.Start("explorer.exe", Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "archive"));
+            }
+        }
+
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            PathBox.Text = string.Empty;
             OriginPictureBox.Image = null;
             ResultPictureBox.Image = null;
-            ScaleTrackBar.Value = 20;
-            ScaleLabel.Text = "Scale: 20";
+
+            Sender("20", 20);
+
+            stripImageLabel.Text = "Image：null";
 
         }
 
@@ -71,7 +101,6 @@ namespace TextArtMaker
         {
             if(ResultPictureBox.Image == null)
             {
-                MessageBox.Show("画像を読み込んでください。", "Text Art Maker", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -88,7 +117,37 @@ namespace TextArtMaker
 
         private void ScaleTrackBar_Scroll(object sender, EventArgs e)
         {
-            ScaleLabel.Text = $"Scale: {ScaleTrackBar.Value.ToString()}";
+            ScaleLabel.Text = $"ASCI I の全体サイズ： {ScaleTrackBar.Value.ToString()} %";
+            stripScaleLabel.Text = $"Scale：{ScaleTrackBar.Value.ToString()} %";
+        }
+
+        private void StyleSelectBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            stripStyleLabel.Text = $"Scale：{StyleSelectBox.SelectedItem.ToString()}";
+        }
+
+        private void ScaleSelectBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (ScaleSelectBox.SelectedIndex)
+            {
+                case 0:
+                    Sender("20", 20);
+                    break;
+                case 1:
+                    Sender("40", 40);
+                    break;
+                case 2:
+                    Sender("60", 60);
+                    break;
+                case 3:
+                    Sender("80", 80);
+                    break;
+                case 4:
+                    Sender("100", 100);
+                    break;
+                default:
+                    return;
+            }
         }
     }
 }
