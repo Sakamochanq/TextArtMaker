@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
 using TextArtMaker.lib;
+using System.Runtime.Remoting.Channels;
 
 namespace TextArtMaker
 {
@@ -15,6 +16,13 @@ namespace TextArtMaker
         public Source()
         {
             InitializeComponent();
+
+            ScaleSelectBox.Items.Add("1x");
+            ScaleSelectBox.Items.Add("2x");
+            ScaleSelectBox.Items.Add("3x");
+            ScaleSelectBox.Items.Add("4x");
+            ScaleSelectBox.Items.Add("5x");
+            ScaleSelectBox.SelectedIndex = 0;
 
             StyleSelectBox.Items.Add("GrayScale");
             StyleSelectBox.Items.Add("Reverse");
@@ -107,6 +115,30 @@ namespace TextArtMaker
         private void StyleSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             stripStyleLabel.Text = $"Scale：{StyleSelectBox.SelectedItem.ToString()}";
+        }
+
+        private void ScaleSelectBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (ScaleSelectBox.SelectedIndex)
+            {
+                case 0:
+                    ScaleTrackBar.Value = 20;
+                    break;
+                case 1:
+                    ScaleTrackBar.Value = 40;
+                    break;
+                case 2:
+                    ScaleTrackBar.Value = 60;
+                    break;
+                case 3:
+                    ScaleTrackBar.Value = 80;
+                    break;
+                case 4:
+                    ScaleTrackBar.Value = 100;
+                    break;
+                default:
+                    return;
+            }
         }
     }
 }
