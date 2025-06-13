@@ -26,6 +26,7 @@ namespace TextArtMaker
 
             StyleSelectBox.Items.Add("GrayScale");
             StyleSelectBox.Items.Add("Reverse");
+            StyleSelectBox.Items.Add("SepiaTone");
             StyleSelectBox.SelectedIndex = 0;
         }
 
@@ -65,6 +66,9 @@ namespace TextArtMaker
                             break;
                         case 1:
                             ResultPictureBox.Image = ImageEdit.Reverse(loadedImage);
+                            break;
+                        case 2:
+                            ResultPictureBox.Image = ImageEdit.SepiaTone(loadedImage);
                             break;
                         default:
                             return;
