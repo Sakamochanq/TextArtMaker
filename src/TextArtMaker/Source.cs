@@ -27,6 +27,7 @@ namespace TextArtMaker
             StyleSelectBox.Items.Add("GrayScale");
             StyleSelectBox.Items.Add("Reverse");
             StyleSelectBox.Items.Add("SepiaTone");
+            StyleSelectBox.Items.Add("HistogramEqualization");
             StyleSelectBox.SelectedIndex = 0;
         }
 
@@ -69,6 +70,9 @@ namespace TextArtMaker
                             break;
                         case 2:
                             ResultPictureBox.Image = ImageEdit.SepiaTone(loadedImage);
+                            break;
+                        case 3:
+                            ResultPictureBox.Image = ImageEdit.HistogramEqualization(loadedImage);
                             break;
                         default:
                             return;

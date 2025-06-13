@@ -62,5 +62,56 @@ namespace TextArtMaker
             }
             return bmp;
         }
+
+        // GithubCopilot wrote
+        // Thank you.
+        public Bitmap HistogramEqualization(Image image)
+        {
+            Bitmap bmp = new Bitmap(image);
+            int width = bmp.Width;
+            int height = bmp.Height;
+
+            // グレースケール化
+            byte[,] gray = new byte[width, height];
+            int[] histogram = new int[256];
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    Color pixel = bmp.GetPixel(x, y);
+                    byte grayValue = (byte)(pixel.R * 0.3 + pixel.G * 0.59 + pixel.B * 0.11);
+                    gray[x, y] = grayValue;
+                    histogram[grayValue]++;
+                }
+            }
+
+            // 累積ヒストグラム
+            int[] cumulative = new int[256];
+            cumulative[0] = histogram[0];
+            for (int i = 1; i < 256; i++)
+            {
+                cumulative[i] = cumulative[i - 1] + histogram[i];
+            }
+
+            int totalPixels = width * height;
+            byte[] equalizedMap = new byte[256];
+            for (int i = 0; i < 256; i++)
+            {
+                equalizedMap[i] = (byte)(255.0 * cumulative[i] / totalPixels);
+            }
+
+            // 新しい画像を生成
+            Bitmap result = new Bitmap(width, height);
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    byte newVal = equalizedMap[gray[x, y]];
+                    result.SetPixel(x, y, Color.FromArgb(newVal, newVal, newVal));
+                }
+            }
+            return result;
+        }
     }
 }
