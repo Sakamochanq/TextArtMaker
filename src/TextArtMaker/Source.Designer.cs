@@ -42,7 +42,7 @@
             this.OpenArchiveButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.名前を付けて保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.名前を付けて保存ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveAsButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編集EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +50,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.aSCIIのサイズのプリセットToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ScaleSelectBox = new System.Windows.Forms.ToolStripComboBox();
+            this.拡張機能XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportPythonButton = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ScaleLabel = new System.Windows.Forms.Label();
             this.toolstrip = new System.Windows.Forms.ToolStrip();
@@ -64,8 +66,6 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.stripStyleLabel = new System.Windows.Forms.ToolStripLabel();
             this.WaitingLabel = new System.Windows.Forms.Label();
-            this.拡張機能XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ExportPythonButton = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
@@ -210,18 +210,19 @@
             // 名前を付けて保存ToolStripMenuItem
             // 
             this.名前を付けて保存ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.名前を付けて保存ToolStripMenuItem1});
+            this.SaveAsButton});
             this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
             this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.名前を付けて保存ToolStripMenuItem.Text = "保存";
             // 
-            // 名前を付けて保存ToolStripMenuItem1
+            // SaveAsButton
             // 
-            this.名前を付けて保存ToolStripMenuItem1.Name = "名前を付けて保存ToolStripMenuItem1";
-            this.名前を付けて保存ToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.SaveAsButton.Name = "SaveAsButton";
+            this.SaveAsButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.名前を付けて保存ToolStripMenuItem1.Size = new System.Drawing.Size(232, 22);
-            this.名前を付けて保存ToolStripMenuItem1.Text = "名前を付けて保存";
+            this.SaveAsButton.Size = new System.Drawing.Size(232, 22);
+            this.SaveAsButton.Text = "名前を付けて保存";
+            this.SaveAsButton.Click += new System.EventHandler(this.SaveAsButton_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -273,6 +274,21 @@
             this.ScaleSelectBox.Name = "ScaleSelectBox";
             this.ScaleSelectBox.Size = new System.Drawing.Size(121, 23);
             this.ScaleSelectBox.SelectedIndexChanged += new System.EventHandler(this.ScaleSelectBox_SelectedIndexChanged);
+            // 
+            // 拡張機能XToolStripMenuItem
+            // 
+            this.拡張機能XToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ExportPythonButton});
+            this.拡張機能XToolStripMenuItem.Name = "拡張機能XToolStripMenuItem";
+            this.拡張機能XToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.拡張機能XToolStripMenuItem.Text = "拡張機能（X）";
+            // 
+            // ExportPythonButton
+            // 
+            this.ExportPythonButton.Name = "ExportPythonButton";
+            this.ExportPythonButton.Size = new System.Drawing.Size(176, 22);
+            this.ExportPythonButton.Text = "PythonScriptの出力";
+            this.ExportPythonButton.Click += new System.EventHandler(this.ExportPythonButton_Click);
             // 
             // panel1
             // 
@@ -389,21 +405,6 @@
             this.WaitingLabel.Text = "変換中 ...";
             this.WaitingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // 拡張機能XToolStripMenuItem
-            // 
-            this.拡張機能XToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ExportPythonButton});
-            this.拡張機能XToolStripMenuItem.Name = "拡張機能XToolStripMenuItem";
-            this.拡張機能XToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
-            this.拡張機能XToolStripMenuItem.Text = "拡張機能（X）";
-            // 
-            // ExportPythonButton
-            // 
-            this.ExportPythonButton.Name = "ExportPythonButton";
-            this.ExportPythonButton.Size = new System.Drawing.Size(180, 22);
-            this.ExportPythonButton.Text = "PythonScriptの出力";
-            this.ExportPythonButton.Click += new System.EventHandler(this.ExportPythonButton_Click);
-            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -453,7 +454,7 @@
         private System.Windows.Forms.ToolStripMenuItem 名前を付けて保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 終了ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 名前を付けて保存ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem SaveAsButton;
         private System.Windows.Forms.ToolStripMenuItem 編集EToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ClearButton;
         private System.Windows.Forms.Panel panel1;

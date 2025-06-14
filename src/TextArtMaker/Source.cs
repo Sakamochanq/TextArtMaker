@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using TextArtMaker.lib;
 using System.Runtime.Remoting.Channels;
+using System.Drawing.Imaging;
 
 namespace TextArtMaker
 {
@@ -209,6 +210,46 @@ namespace TextArtMaker
             }
             ExportPython exportPython = new ExportPython();
             exportPython.ToConsole(ASCII_ART);
+        }
+
+        private void SaveAsButton_Click(object sender, EventArgs e)
+        {
+            if (ResultPictureBox.Image != null)
+            {
+                using (var sfd = new SaveFileDialog() { Filter = "BitMap形式(*.bmp) | *.bmp; | PNG形式(*.png) | *.png; | JPEG形式(*.jpg *.jpeg) | *.jpg; *.jpeg; | Windowsメタ形式(*.wmf) | *.wmf;" })
+                {
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            string FileName = sfd.FileName;
+
+                            switch (Path.GetExtension(FileName).ToLower())
+                            {
+                                case ".bmp":
+                                    ResultPictureBox.Image.Save(FileName, ImageFormat.Bmp);
+                                    break;
+
+                                case ".png":
+                                    ResultPictureBox.Image.Save(FileName, ImageFormat.Png);
+                                    break;
+
+                                case ".jpg":
+                                case ".jpeg":
+                                    ResultPictureBox.Image.Save(FileName, ImageFormat.Jpeg);
+                                    break;
+                                case ".wmf":
+                                    ResultPictureBox.Image.Save(FileName, ImageFormat.Wmf);
+                                    break;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                    }
+                }
+            }
         }
     }
 }
