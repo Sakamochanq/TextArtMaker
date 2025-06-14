@@ -291,7 +291,8 @@
             // 
             this.ExportPythonButton.Image = ((System.Drawing.Image)(resources.GetObject("ExportPythonButton.Image")));
             this.ExportPythonButton.Name = "ExportPythonButton";
-            this.ExportPythonButton.Size = new System.Drawing.Size(180, 22);
+            this.ExportPythonButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.ExportPythonButton.Size = new System.Drawing.Size(216, 22);
             this.ExportPythonButton.Text = "PythonScriptの出力";
             this.ExportPythonButton.Click += new System.EventHandler(this.ExportPythonButton_Click);
             // 
