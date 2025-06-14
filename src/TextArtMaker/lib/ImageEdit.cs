@@ -5,6 +5,12 @@ namespace TextArtMaker
 {
     internal class ImageEdit
     {
+        public Bitmap Default(Image image)
+        {
+            Bitmap bmp = new Bitmap(image);
+            return bmp;
+        }
+
         public Bitmap GrayScale(Image image)
         {
             Bitmap bmp = new Bitmap(image);

@@ -28,11 +28,12 @@ namespace TextArtMaker
             ScaleSelectBox.Items.Add("5x");
             ScaleSelectBox.SelectedIndex = 0;
 
+            StyleSelectBox.Items.Add("Default");
             StyleSelectBox.Items.Add("GrayScale");
             StyleSelectBox.Items.Add("Reverse");
             StyleSelectBox.Items.Add("SepiaTone");
             StyleSelectBox.Items.Add("HistogramEqualization");
-            StyleSelectBox.SelectedIndex = 0;
+            StyleSelectBox.SelectedIndex = 1;
         }
 
         // 画像のラベルとスケールの値を更新するメソッド
@@ -66,15 +67,18 @@ namespace TextArtMaker
                     switch (StyleSelectBox.SelectedIndex)
                     {
                         case 0:
-                            ResultPictureBox.Image = ImageEdit.GrayScale(loadedImage);
+                            ResultPictureBox.Image = ImageEdit.Default(loadedImage);
                             break;
                         case 1:
-                            ResultPictureBox.Image = ImageEdit.Reverse(loadedImage);
+                            ResultPictureBox.Image = ImageEdit.GrayScale(loadedImage);
                             break;
                         case 2:
-                            ResultPictureBox.Image = ImageEdit.SepiaTone(loadedImage);
+                            ResultPictureBox.Image = ImageEdit.Reverse(loadedImage);
                             break;
                         case 3:
+                            ResultPictureBox.Image = ImageEdit.SepiaTone(loadedImage);
+                            break;
+                        case 4:
                             ResultPictureBox.Image = ImageEdit.HistogramEqualization(loadedImage);
                             break;
                         default:
@@ -149,15 +153,18 @@ namespace TextArtMaker
                 switch (StyleSelectBox.SelectedIndex)
                 {
                     case 0:
-                        ResultPictureBox.Image = ImageEdit.GrayScale(loadedImage);
+                        ResultPictureBox.Image = ImageEdit.Default(loadedImage);
                         break;
                     case 1:
-                        ResultPictureBox.Image = ImageEdit.Reverse(loadedImage);
+                        ResultPictureBox.Image = ImageEdit.GrayScale(loadedImage);
                         break;
                     case 2:
-                        ResultPictureBox.Image = ImageEdit.SepiaTone(loadedImage);
+                        ResultPictureBox.Image = ImageEdit.Reverse(loadedImage);
                         break;
                     case 3:
+                        ResultPictureBox.Image = ImageEdit.SepiaTone(loadedImage);
+                        break;
+                    case 4:
                         ResultPictureBox.Image = ImageEdit.HistogramEqualization(loadedImage);
                         break;
                     default:
