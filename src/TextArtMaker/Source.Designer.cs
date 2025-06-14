@@ -192,7 +192,7 @@
             this.OpenButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenButton.Image")));
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenButton.Size = new System.Drawing.Size(180, 22);
+            this.OpenButton.Size = new System.Drawing.Size(179, 22);
             this.OpenButton.Text = "開く";
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
@@ -200,14 +200,14 @@
             // 
             this.OpenArchiveButton.Name = "OpenArchiveButton";
             this.OpenArchiveButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
-            this.OpenArchiveButton.Size = new System.Drawing.Size(180, 22);
+            this.OpenArchiveButton.Size = new System.Drawing.Size(179, 22);
             this.OpenArchiveButton.Text = "archiveを開く";
             this.OpenArchiveButton.Click += new System.EventHandler(this.OpenArchiveButton_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(176, 6);
             // 
             // 名前を付けて保存ToolStripMenuItem
             // 
@@ -215,7 +215,7 @@
             this.SaveAsButton});
             this.名前を付けて保存ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("名前を付けて保存ToolStripMenuItem.Image")));
             this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
-            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.名前を付けて保存ToolStripMenuItem.Text = "保存";
             // 
             // SaveAsButton
@@ -230,13 +230,13 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 6);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
             this.終了ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.終了ToolStripMenuItem.Text = "終了";
             // 
             // 編集EToolStripMenuItem

@@ -8,7 +8,7 @@ namespace TextArtMaker.lib
     {
         public void ToConsole(string text)
         {
-            using (var saveFileDialog = new SaveFileDialog() { Filter = "Pythonスクリプト(*.py) | *.py"})
+            using (var saveFileDialog = new SaveFileDialog() { Filter = "Python(*.py) | *.py" })
             {
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
