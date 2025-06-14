@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Source));
             this.OriginPictureBox = new System.Windows.Forms.PictureBox();
             this.ResultPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -188,6 +189,7 @@
             // 
             // OpenButton
             // 
+            this.OpenButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenButton.Image")));
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.OpenButton.Size = new System.Drawing.Size(180, 22);
@@ -211,6 +213,7 @@
             // 
             this.名前を付けて保存ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveAsButton});
+            this.名前を付けて保存ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("名前を付けて保存ToolStripMenuItem.Image")));
             this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
             this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.名前を付けて保存ToolStripMenuItem.Text = "保存";
@@ -248,6 +251,7 @@
             // 
             // ClearButton
             // 
+            this.ClearButton.Image = ((System.Drawing.Image)(resources.GetObject("ClearButton.Image")));
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Delete)));
             this.ClearButton.Size = new System.Drawing.Size(188, 22);
@@ -285,8 +289,9 @@
             // 
             // ExportPythonButton
             // 
+            this.ExportPythonButton.Image = ((System.Drawing.Image)(resources.GetObject("ExportPythonButton.Image")));
             this.ExportPythonButton.Name = "ExportPythonButton";
-            this.ExportPythonButton.Size = new System.Drawing.Size(176, 22);
+            this.ExportPythonButton.Size = new System.Drawing.Size(180, 22);
             this.ExportPythonButton.Text = "PythonScriptの出力";
             this.ExportPythonButton.Click += new System.EventHandler(this.ExportPythonButton_Click);
             // 
