@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
-using System.Diagnostics;
 using TextArtMaker.lib;
-using System.Runtime.Remoting.Channels;
-using System.Drawing.Imaging;
 
 namespace TextArtMaker
 {
@@ -47,6 +46,7 @@ namespace TextArtMaker
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
+
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Windows画像形式（*.png; *.jpeg; *.bmp）|*.png; *.jpeg; *.jpg; *.bmp;" })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
@@ -59,7 +59,7 @@ namespace TextArtMaker
                     loadedImage = Image.FromFile(ofd.FileName);
                     OriginPictureBox.Image = loadedImage;
 
-
+                    ResultPictureBox.Image = null;
                     WaitingLabel.Visible = true;
                     Application.DoEvents();
 
@@ -108,6 +108,7 @@ namespace TextArtMaker
         {
             OriginPictureBox.Image = null;
             ResultPictureBox.Image = null;
+            loadedImage = null;
             ASCII_ART = null;
 
             Sender("20", 20);
