@@ -3,7 +3,6 @@
         <img src="./assets/TextArtMaker-Logo.png" width="350px">
     </a>
     <br>
-    <br>
     <hr>
 </div>
 
