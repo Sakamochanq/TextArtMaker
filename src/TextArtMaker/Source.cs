@@ -255,5 +255,10 @@ namespace TextArtMaker
         {
             MessageBox.Show("任意の画像からASCIIARTを作成します。\n変換後は標準のメモ帳アプリでASCIIARTを開きます。", "Text Art Maker", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

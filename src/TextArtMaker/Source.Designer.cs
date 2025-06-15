@@ -45,7 +45,7 @@
             this.名前を付けて保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitButton = new System.Windows.Forms.ToolStripMenuItem();
             this.編集EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClearButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -53,6 +53,8 @@
             this.ScaleSelectBox = new System.Windows.Forms.ToolStripComboBox();
             this.拡張機能XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportPythonButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HelpButton = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ScaleLabel = new System.Windows.Forms.Label();
             this.toolstrip = new System.Windows.Forms.ToolStrip();
@@ -67,8 +69,6 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.stripStyleLabel = new System.Windows.Forms.ToolStripLabel();
             this.WaitingLabel = new System.Windows.Forms.Label();
-            this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.HelpButton = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
@@ -185,7 +185,7 @@
             this.toolStripSeparator3,
             this.名前を付けて保存ToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.終了ToolStripMenuItem});
+            this.ExitButton});
             this.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem";
             this.ファイルFToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.ファイルFToolStripMenuItem.Text = "ファイル（F）";
@@ -235,12 +235,13 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
-            // 終了ToolStripMenuItem
+            // ExitButton
             // 
-            this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.終了ToolStripMenuItem.Text = "終了";
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.ExitButton.Size = new System.Drawing.Size(180, 22);
+            this.ExitButton.Text = "終了";
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // 編集EToolStripMenuItem
             // 
@@ -298,6 +299,24 @@
             this.ExportPythonButton.Size = new System.Drawing.Size(216, 22);
             this.ExportPythonButton.Text = "PythonScriptの出力";
             this.ExportPythonButton.Click += new System.EventHandler(this.ExportPythonButton_Click);
+            // 
+            // ヘルプHToolStripMenuItem
+            // 
+            this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.HelpButton});
+            this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
+            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.ヘルプHToolStripMenuItem.Text = "ヘルプ（H）";
+            // 
+            // HelpButton
+            // 
+            this.HelpButton.Image = ((System.Drawing.Image)(resources.GetObject("HelpButton.Image")));
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.H)));
+            this.HelpButton.Size = new System.Drawing.Size(211, 22);
+            this.HelpButton.Text = "ヘルプの表示";
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // panel1
             // 
@@ -414,22 +433,6 @@
             this.WaitingLabel.Text = "変換中 ...";
             this.WaitingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ヘルプHToolStripMenuItem
-            // 
-            this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.HelpButton});
-            this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
-            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.ヘルプHToolStripMenuItem.Text = "ヘルプ（H）";
-            // 
-            // HelpButton
-            // 
-            this.HelpButton.Image = ((System.Drawing.Image)(resources.GetObject("HelpButton.Image")));
-            this.HelpButton.Name = "HelpButton";
-            this.HelpButton.Size = new System.Drawing.Size(180, 22);
-            this.HelpButton.Text = "ヘルプの表示";
-            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
-            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -478,7 +481,7 @@
         private System.Windows.Forms.ToolStripMenuItem OpenButton;
         private System.Windows.Forms.ToolStripMenuItem 名前を付けて保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 終了ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitButton;
         private System.Windows.Forms.ToolStripMenuItem SaveAsButton;
         private System.Windows.Forms.ToolStripMenuItem 編集EToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ClearButton;
