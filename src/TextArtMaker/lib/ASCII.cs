@@ -1,9 +1,9 @@
-﻿using System.Diagnostics;
-using System;
+﻿using System.Windows.Forms;
+using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Text;
-using System.Windows.Forms;
+using System.IO;
+using System;
 
 namespace TextArtMaker.lib
 {
