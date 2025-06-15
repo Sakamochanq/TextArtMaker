@@ -1,6 +1,6 @@
 <div align="center">
     <a href="#">
-        <img src="./assets/TextArtMaker-Logo.png" width="350px">
+        <img src="./assets/TextArtMaker-Logo.png" width="500px">
     </a>
     <br>
     <hr>
