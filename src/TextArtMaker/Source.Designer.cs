@@ -67,6 +67,8 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.stripStyleLabel = new System.Windows.Forms.ToolStripLabel();
             this.WaitingLabel = new System.Windows.Forms.Label();
+            this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HelpButton = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.OriginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleTrackBar)).BeginInit();
@@ -167,7 +169,8 @@
             this.menustrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルFToolStripMenuItem,
             this.編集EToolStripMenuItem,
-            this.拡張機能XToolStripMenuItem});
+            this.拡張機能XToolStripMenuItem,
+            this.ヘルプHToolStripMenuItem});
             this.menustrip.Location = new System.Drawing.Point(0, 0);
             this.menustrip.Name = "menustrip";
             this.menustrip.Size = new System.Drawing.Size(733, 24);
@@ -411,6 +414,22 @@
             this.WaitingLabel.Text = "変換中 ...";
             this.WaitingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ヘルプHToolStripMenuItem
+            // 
+            this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.HelpButton});
+            this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
+            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.ヘルプHToolStripMenuItem.Text = "ヘルプ（H）";
+            // 
+            // HelpButton
+            // 
+            this.HelpButton.Image = ((System.Drawing.Image)(resources.GetObject("HelpButton.Image")));
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(180, 22);
+            this.HelpButton.Text = "ヘルプの表示";
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
+            // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -484,6 +503,8 @@
         private System.Windows.Forms.Label WaitingLabel;
         private System.Windows.Forms.ToolStripMenuItem 拡張機能XToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExportPythonButton;
+        private System.Windows.Forms.ToolStripMenuItem ヘルプHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HelpButton;
     }
 }
 
