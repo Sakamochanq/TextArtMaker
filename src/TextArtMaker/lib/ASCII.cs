@@ -70,7 +70,7 @@ namespace TextArtMaker.lib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Text Art Maker", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Console.WriteLine(ex.Message);
             }
         }
 
